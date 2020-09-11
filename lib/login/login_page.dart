@@ -59,17 +59,13 @@ class _LoginPageState extends State<LoginPage> {
                 maxlength: 50,
                 validator: validateName,
               ),
-              Column(
-                children: [
-                  _buildTextFormField(
-                    controller: _passController,
-                    icon: Icon(Icons.lock, color: Colors.orange[300]),
-                    text: 'Password',
-                    obscureText: true,
-                    maxlength: 8,
-                    validator: validatePass,
-                  ),
-                ],
+              _buildTextFormField(
+                controller: _passController,
+                icon: Icon(Icons.lock, color: Colors.orange[300]),
+                text: 'Password',
+                obscureText: true,
+                maxlength: 8,
+                validator: validatePass,
               ),
             ],
           )

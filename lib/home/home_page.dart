@@ -56,7 +56,6 @@ class _HomePageState extends State<HomePage> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         _buildMenu(),
-        Scaffold.of(context).openDrawer(),
         _buildLogout(),
       ],
     );

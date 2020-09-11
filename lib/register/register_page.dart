@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:new_trip_challenger/home/home_page.dart';
+import 'package:new_trip_challenger/login/login_page.dart';
 import 'package:new_trip_challenger/model/user_model.dart';
 import 'package:new_trip_challenger/validate/validate.dart';
 
@@ -310,14 +311,21 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget _buildTextBot() {
     return Padding(
       padding: const EdgeInsets.only(top: 200),
-      child: RichText(
-        text: TextSpan(
-          text: 'Don\'t have an account? ',
-          style: TextStyle(color: Colors.black),
-          children: <TextSpan>[
-            TextSpan(text: 'Login', style: TextStyle(color: Colors.orange)),
-          ],
-        ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            'Don\'t have an account? ',
+            style: TextStyle(color: Colors.black),
+          ),
+          GestureDetector(
+            child: Text('Login', style: TextStyle(color: Colors.orange)),
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => LoginPage()));
+            },
+          ),
+        ],
       ),
     );
   }
